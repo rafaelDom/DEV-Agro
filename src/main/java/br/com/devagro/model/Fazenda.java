@@ -4,6 +4,8 @@ import java.util.Date;
 
 import javax.persistence.*;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -35,6 +37,7 @@ public class Fazenda {
 	private Empresa empresa;
 
 	@Column(name = "data_ultima_colheira")
+	@JsonFormat(pattern="yyyy-MM-dd'T'HH:mm:ss")
 	private Date dataUltimaColheita;
 
 }

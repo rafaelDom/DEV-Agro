@@ -4,6 +4,8 @@ import java.util.Date;
 
 import javax.persistence.*;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -35,9 +37,11 @@ public class Funcionario {
 	private Enum<Sexo> sexo;
 
 	@Column(name = "data_nascimento")
+	@JsonFormat(pattern="yyyy-MM-dd'T'HH:mm:ss")
 	private Date dataNascimento;
 
 	@Column(name = "data_contratacao")
+	@JsonFormat(pattern="yyyy-MM-dd'T'HH:mm:ss")
 	private Date dataContratacao;
 
 	@ManyToOne
