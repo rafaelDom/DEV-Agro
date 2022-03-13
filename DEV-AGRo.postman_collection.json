@@ -1,0 +1,557 @@
+{
+	"info": {
+		"_postman_id": "0a2bfb33-ea60-4a45-8faf-0418bccf3a89",
+		"name": "DEV-AGRo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "POST Empresa",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"BPA2\",\r\n    \"cnpj\": \"99.999.999/9999-99\",\r\n    \"endereco\" : \"xpto, 20\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/empresa",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"empresa"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					]
+				},
+				"description": "POST Empresa"
+			},
+			"response": []
+		},
+		{
+			"name": "PUT Registrar Colheita",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/fazenda/registrarColheita?id=2&dataColheita=2022-03-12&qtdeAumentarEstoque=2.0",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"fazenda",
+						"registrarColheita"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "2"
+						},
+						{
+							"key": "dataColheita",
+							"value": "2022-03-12"
+						},
+						{
+							"key": "qtdeAumentarEstoque",
+							"value": "2.0"
+						}
+					]
+				},
+				"description": "POST Empresa"
+			},
+			"response": []
+		},
+		{
+			"name": "PUT Retirar Grao",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/fazenda/removerGrao?id=2&qtdeRemoverEstoque=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"fazenda",
+						"removerGrao"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "2"
+						},
+						{
+							"key": "dataColheita",
+							"value": "2022-03-12",
+							"disabled": true
+						},
+						{
+							"key": "qtdeRemoverEstoque",
+							"value": "1"
+						}
+					]
+				},
+				"description": "POST Empresa"
+			},
+			"response": []
+		},
+		{
+			"name": "POST Grao",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"Feijao\",\r\n    \"empresa\": {\r\n        \"id\" : 4\r\n    },\r\n    \"tempoMedioColheitaDias\" : 7\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/grao",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"grao"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					]
+				},
+				"description": "POST Empresa"
+			},
+			"response": []
+		},
+		{
+			"name": "POST GRAO",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"Arroz\",\r\n    \"empresa\" :{\r\n        \"id\": 4,\r\n        \"nome\": \"BPA\",\r\n        \"cnpj\": \"0000000000000\",\r\n        \"endereco\" : \"xpto, 20\"\r\n    },\r\n    \"tempo_medio_colheira_dias\" : 4\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/grao",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"grao"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UPD Fazenda",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\":\"Fazendo do Tio UPD\",\r\n    \"endereco\": \"Rua xpto UPD\",\r\n    \"estoqueInicial\": 5.2,\r\n    \"dataUltimaColheita\": \"2018-09-04T10:44:46\",\r\n    \"empresa\":{\r\n        \"id\": 7,\r\n        \"nome\": \"BPA\",\r\n        \"cnpj\": \"0000000000000\",\r\n        \"endereco\" : \"xpto, 20\"\r\n    }\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/fazenda/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"fazenda",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST Funcionario",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"Rafa1\",\r\n    \"sobreNome\": \"Dom\",\r\n    \"endereco\": \"Rua MMS, 30\",\r\n    \"cpf\": \"999\",\r\n    \"telefone\": \"1247845\",\r\n    \"sexo\": \"MASCULINO\",\r\n    \"dataNascimento\" : \"2018-09-04T10:44:46\",\r\n    \"dataContratacao\": \"2018-09-04T10:44:46\",\r\n     \"empresa\":{\r\n        \"id\": 1,\r\n        \"nome\": \"BPA\",\r\n        \"cnpj\": \"0000000000000\",\r\n        \"endereco\" : \"xpto, 20\"\r\n    }\r\n\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/funcionario",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"funcionario"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET lista completa de empresas cadastradas",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/empresa/todas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"empresa",
+						"todas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET qtdeFazendasPorEmpresa",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 4\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/fazenda/qtdeFazendasPorEmpresa",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"fazenda",
+						"qtdeFazendasPorEmpresa"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET qtdeFuncionariosPorEmpresa",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 4\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/fazenda/qtdeFazendasPorEmpresa",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"fazenda",
+						"qtdeFazendasPorEmpresa"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET listaFazendaProximaColheita",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 4\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/fazenda/listaFazendaProximaColheita",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"fazenda",
+						"listaFazendaProximaColheita"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST Fazenda",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\":\"Fazenda 6\",\r\n    \"endereco\": \"Rua xpto UPD\",\r\n    \"estoqueInicial\": 5.2,\r\n    \"dataUltimaColheita\": \"2018-09-04T10:44:46\",\r\n    \"empresa\":{\r\n        \"id\": 4\r\n    }\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/fazenda",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"fazenda"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Todas fazendas de uma empresa",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 6\r\n\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/fazenda/todasFazendasDaEmpresaID/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"fazenda",
+						"todasFazendasDaEmpresaID",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Todos funcionarios de uma empresa",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 1\r\n\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/funcionario/todosFuncionariosEmpresa",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"funcionario",
+						"todosFuncionariosEmpresa"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Lista de Graos por empresa",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 4\r\n\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/grao/listaGraoEmpresa",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"grao",
+						"listaGraoEmpresa"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Todos Graos de uma empresa",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 6\r\n\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/grao/todosGraosEmpresa/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"grao",
+						"todosGraosEmpresa",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
