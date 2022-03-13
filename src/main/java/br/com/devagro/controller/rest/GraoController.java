@@ -4,9 +4,12 @@ import br.com.devagro.service.GraoService;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.web.bind.annotation.*;
 
 import br.com.devagro.controller.dto.GraoDto;
+import br.com.devagro.model.Empresa;
 import br.com.devagro.model.Grao;
 
 @RestController
@@ -29,12 +32,12 @@ public class GraoController {
     }
 
     @PostMapping
-    public Grao adicionarGrao(@RequestBody GraoDto graoDto){
+    public Grao adicionarGrao(@RequestBody @Valid  GraoDto graoDto){
         return service.adicionaGrao(graoDto.converter());
     }
 
     @PutMapping("/{id}")
-    public Grao atualizarGrao(@PathVariable Long id,@RequestBody GraoDto graoDto){
+    public Grao atualizarGrao(@PathVariable Long id,@RequestBody @Valid GraoDto graoDto){
         return service.atualizaGrao(id, graoDto.converter());
     }
 
@@ -42,4 +45,15 @@ public class GraoController {
     public void deletarGrao(@PathVariable Long id){
         service.deletaGrao(id);
     }
+    
+	@GetMapping("/todosGraosEmpresa")
+	public List<Grao> listarFazendasEmpresa(@RequestBody Empresa empresa) {
+		return service.listaGraoEmpresa(empresa);
+	}
+	
+	@GetMapping("/listaGraoEmpresa")
+	public <T> List<T> listaGraoEmpresa(@RequestBody Empresa empresa){
+		return service.companyGrades(empresa);
+		
+	}
 }

@@ -9,6 +9,8 @@ import lombok.Setter;
 import java.util.Date;
 
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+
 
 @Getter
 @Setter
@@ -22,7 +24,7 @@ public class FazendaDto {
 
 	private Grao grao;
 
-	@NotBlank
+	@NotNull
 	private Double estoqueInicial;
 
 	private Empresa empresa;

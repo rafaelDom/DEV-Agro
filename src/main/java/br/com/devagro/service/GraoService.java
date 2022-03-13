@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import br.com.devagro.model.Empresa;
 import br.com.devagro.model.Grao;
 import br.com.devagro.repository.GraoRepository;
 
@@ -35,5 +36,14 @@ public class GraoService {
 
 	    public void deletaGrao(Long id){
 	        repository.deleteById(id);
+	    }
+	    
+	    public List<Grao> listaGraoEmpresa(Empresa empresa){
+	    	return repository.companyGradeList(empresa);
+	    }
+	    
+	    public <T> List<T> companyGrades(Empresa empresa){
+	    	return repository.companyGrades(empresa);
+	 
 	    }
 }

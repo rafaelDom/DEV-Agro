@@ -10,6 +10,7 @@ import lombok.Setter;
 import java.util.List;
 
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Pattern;
 
 @Getter
 @Setter
@@ -18,7 +19,7 @@ public class EmpresaDto {
 	@NotBlank
 	private String nome;
 
-	@NotBlank
+	@Pattern(regexp="\\d{2}\\.\\d{3}\\.\\d{3}\\/\\d{4}\\-\\d{2}?", message = "Campo CNPJ deve ser no formato XX.XXX.XXX/XXXX-XX")
 	private String cnpj;
 
 	@NotBlank
@@ -33,7 +34,7 @@ public class EmpresaDto {
 
 	private List<Grao> graos;
 	
-    public Empresa converter(){
+	public Empresa converter(){
     	Empresa empresa = new Empresa();
     	empresa.setNome(nome);
     	empresa.setCnpj(cnpj);

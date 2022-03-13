@@ -5,6 +5,7 @@ import java.util.Date;
 import javax.persistence.*;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -12,6 +13,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
+
 @Table(name = "fazenda")
 public class Fazenda {
 
@@ -26,7 +28,8 @@ public class Fazenda {
 	private String endereco;
 
 	@OneToOne
-	@JoinColumn(name = "id")
+	@JoinColumn(name = "id_grao", referencedColumnName = "id")
+	@JsonIgnore
 	private Grao grao;
 
 	@Column(name = "estoque_inicial", nullable = false)
@@ -34,10 +37,11 @@ public class Fazenda {
 
 	@ManyToOne
 	@JoinColumn(name="id_empresa", referencedColumnName = "id")
+	@JsonIgnore
 	private Empresa empresa;
 
-	@Column(name = "data_ultima_colheira")
-	@JsonFormat(pattern="yyyy-MM-dd'T'HH:mm:ss")
+	@Column(name = "data_ultima_colheita")
+	@JsonFormat(pattern="yyyy-MM-dd")
 	private Date dataUltimaColheita;
 
 }

@@ -5,6 +5,7 @@ import br.com.devagro.model.Grao;
 import lombok.Getter;
 import lombok.Setter;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 @Getter
 @Setter
@@ -12,10 +13,10 @@ public class GraoDto {
 	@NotBlank
 	private String nome;
 	
-	@NotBlank
+	@NotNull
 	private Empresa empresa;
 	
-	@NotBlank
+	@NotNull
 	private int tempoMedioColheitaDias;
 	
 	

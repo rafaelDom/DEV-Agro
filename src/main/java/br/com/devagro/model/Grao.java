@@ -2,6 +2,8 @@ package br.com.devagro.model;
 
 import javax.persistence.*;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -19,9 +21,10 @@ public class Grao {
 
 	@ManyToOne
 	@JoinColumn(name="id_empresa", referencedColumnName = "id")
+	@JsonIgnore
 	private Empresa empresa;
 
-	@Column(name = "tempo_medio_colheira_dias", nullable = false)
+	@Column(name = "tempo_medio_colheita_dias", nullable = false)
 	private int tempoMedioColheitaDias;
 	
 }

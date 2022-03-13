@@ -5,6 +5,7 @@ import java.util.Date;
 import javax.persistence.*;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -32,19 +33,21 @@ public class Funcionario {
 
 	@Column(name = "telefone", nullable = false)
 	private String telefone;
-
+	
+	@Enumerated(EnumType.STRING)
 	@Column(name = "sexo", nullable = false)
-	private Enum<Sexo> sexo;
+	private Sexo sexo;
 
 	@Column(name = "data_nascimento")
-	@JsonFormat(pattern="yyyy-MM-dd'T'HH:mm:ss")
+	@JsonFormat(pattern="yyyy-MM-dd")
 	private Date dataNascimento;
 
 	@Column(name = "data_contratacao")
-	@JsonFormat(pattern="yyyy-MM-dd'T'HH:mm:ss")
+	@JsonFormat(pattern="yyyy-MM-dd")
 	private Date dataContratacao;
 
 	@ManyToOne
 	@JoinColumn(name="id_empresa", referencedColumnName = "id")
+	@JsonIgnore
 	private Empresa empresa;
 }
